@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+:root {
+  --very-dark-grey: #18171F;
+  --dark-grey: #24232C;
+  --grey: #817D92;
+  --neon-green: #A4FFAF;
+  --red: #F64A4A;
+  --orange: #FB7C58;
+  --orange: #FB7C58;
+  --yellow: #F8CD65;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  background-color: var(--very-dark-grey);
+  color: #ffffff;
+  font-family: "JetBrains Mono", monospace !important;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.application-container{
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.component-wrapper{
+  width: 400px;
+}
+
+
+
+.copy-input-wrapper{
+  display: flex; 
+  align-items: center; 
+  background-color: var(--dark-grey);
+}
+.copy-input-wrapper img{
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.copied{
+  text-align: end;
+  font-style: italic;
+}
+
+.component-wrapper input[type='text']{
+  background-color: transparent;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  font-size: 2rem;
+  color: #ffffff;
+  font-family: "JetBrains Mono", monospace !important;
+
+}
+
+.input-variables-wrapper{
+  padding: 1rem;
+  background-color: var(--dark-grey);
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.input-variables-wrapper .character-length{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-variables-wrapper .character-length h3{
+  font-size: 1.5rem;
+  color: var(--neon-green);
+}
+.input-variables-wrapper input[type='range']{
+  width: 100%;
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track {
+  /* background: var(--very-dark-grey); */
+  height: 0.5rem;
+}
+
+
+input[type="range"]::-moz-range-track {
+  background: var(--very-dark-grey);
+  /* height: 0.5rem; */
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -5px;   
+}
+
+.checkbox-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkboxes{
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="checkbox"]:checked  {
+  accent-color: var(--neon-green);
+}
+
+
+.password-indicator{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--very-dark-grey);
+  padding: .5rem;
+}
+
+.level-text{
+  font-weight: 200;
+  color: var(--grey);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.strength-level{
+  display: flex;
+}
+.strength-level > div > p{
+  font-weight: 400;
+  color: #fff;
+}
+.strength-level .indicators{
+  display: flex;
+
+}
+.strength-level .indicators .password-strength-indicator{
+  width: 15px;
+  border: 1px solid #fff;
+  margin-left: 10px;
+}
+
+
+.strength-level .indicators.none :nth-child(-n +1) {
+  background-color: var(--red);
+  border: none;
+}
+.strength-level .indicators.weak :nth-child(-n +2) {
+  background-color: var(--orange);
+  border: none;
+}
+.strength-level .indicators.medium :nth-child(-n +3) {
+  background-color: var(--yellow);
+  border: none;
+}
+.strength-level .indicators.strong :nth-child(-n + 4) {
+  background-color: var(--neon-green);
+  border: none;
+}
+
+
+button{
+  background-color: var(--neon-green);
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-family: "JetBrains Mono", monospace !important;
+  cursor: pointer;
+  margin-top: 1rem;
 }
